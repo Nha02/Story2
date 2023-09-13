@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Survey Form</h1>
+        <form class="filter" name="submit-form-google-sheet">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" minlength="4" maxlength="50" required><br><br>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="age">Your Age:</label>
+            <input type="number" id="age" name="age" min="1" max="100" required><br><br>
+
+            <label for="phone">Your Phone:</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
+
+            <label for="address">Your Address:</label>
+            <textarea id="address" name="address" required></textarea><br><br>
+
+            <label for="hobbies">Your Hobbies:</label>
+            <select id="hobbies" name="hobbies" required>
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select><br><br>
+
+            <label for="buyCourse">Do you want to buy course ABC?</label>
+            <input type="radio" name="buyCourse" value="yes" required> Yes
+            <input type="radio" name="buyCourse" value="no" required> No<br><br>
+
+            <label for="payment">How much are you willing to pay for the course?</label>
+            <input type="number" id="payment" min=1 name="payment" required><br><br>
+
+            <label for="comment">Your Comment:</label>
+            <textarea id="comment" name="comment"></textarea><br><br>
+
+            <input type="submit" value="Submit">
+            <div id="show">
+
+            </div>
+    </div>
+    </form>
+    <script>
+        const url = "https://sheetdb.io/api/v1/2w22p5ihkhera";
+        const form = document.forms['submit-form-google-sheet'];
+        form.addEventListener('submit', e => {
+
+            e.preventDefault();
+
+            const name = $('#name').val();
+            if (name.length < 4) {
+                alert('Name must be at least 4 characters long.');
+                return;
+            }
+
+            // Validate phone
+            const phone = $('#phone').val();
+            const phoneRegex = /((09|03|07|08|05)+([0-9]{8})\b)/g; // Change this regex based on your phone number format
+            if (!phone.match(phoneRegex)) {
+                alert('Please enter a valid phone number.');
+                return;
+            }
+
+            // Validate email
+            const email = $('#email').val();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email.match(emailRegex)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            // Validate age
+            const age = parseInt($('#age').val());
+            if (isNaN(age) || age < 1 || age > 100) {
+                alert('Please enter a valid age between 1 and 100.');
+                return;
+            }
+
+            console.log($('#address').val());
+            // call API
+            fetch(url, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    var name = $('#name').val();
+                    var email = $('#email').val();
+                    var age = $('#age').val();
+                    var phone = $('#phone').val();
+                    var address = $('#address').val();
+                    var hobbies = $('#hobbies').val();
+                    var buyCourse = document.querySelector('input[name="buyCourse"]:checked').value;
+                    var payment = $('#payment').val();
+                    var comment = $('#comment').val();
+                    var data = '';
+                  
+                    data += '<div>Name : ' + name + '</div>';
+                    data += '<div>Email : ' + email + '</div>';
+                    data += '<div>Age : ' + age + '</div>';
+                    data += '<div>Phone : ' + phone + '</div>';
+                    data += '<div>Address : ' + address + '</div>';
+                    data += '<div>Hobbies : ' + hobbies + '</div>';
+                    data += '<div>buyCourse : ' + buyCourse + '</div>';
+                    data += '<div>payment : ' + payment + '</div>';
+                    data += '<div>comment : ' + comment + '</div>';
+                    document.getElementById('show').innerHTML = data;
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+
+</html>

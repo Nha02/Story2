@@ -1,0 +1,139 @@
+Quy trình phát triển phần mềm:
+1: Analysis ( lập plan- phân tích)
+2: Design
+3: Development ( thực hiện )
+4: testing
+5: deployment stage ( check )
+6: Maintenance ( Duy trì)
+	
+******SCRUM là tốt nhất nếu các yêu cầu thường xuyên thay đổi.
+-Mỗi giai đoạn của dự án có nhiều lần lặp lại. Phân tích, thiết kế, phát triển. 
+Triển khai cần phải được hoàn thành trong mỗi vòng lặp.
+-Cách tiếp cận hợp tác hơn, nơi sự tham gia của khách hàng được đề cao.
+******WATERFALL là tốt nhất nếu không có thay đổi trong yêu cầu.
+-Phân tích, thiết kế, phát triển. Triển khai cần được hoàn thành cho mọi giai đoạn của dự án.
+-Sự tham gia của khách hàng ngày càng quan trọng hơn.
+  
+
+*****DOM ( Document object model ) Mô hình Đối tượng Tài liệu
+ 3 thành phần
+- Element ( thẻ tag trong file html )
+- Attribute( thuộc tính id , name, type 
+- Text ( chữ phần tử của Dom ( bên trong body))
+
+
+HTTP stands for Hyper Text Transfer Protocol
+Clients are often browsers (Chrome, Edge, Safari...), but they can be any type of program or device.
+
+Servers are most often computers in the cloud.
+Giao tiếp giữa máy khách và máy chủ được thực hiện bằng các bước :
+
+Một máy khách (trình duyệt) gửi yêu cầu HTTP tới web
+Một máy chủ web nhận được yêu cầu
+Máy chủ chạy một ứng dụng để xử lý yêu cầu
+Máy chủ trả về phản hồi HTTP (đầu ra) cho trình duyệt
+Máy khách (trình duyệt) nhận được phản hồi
+
+*******URL
+ Protocol - Domain - Path - Parameters
+-Protocol: Phổ biến nhất là "http://" hoặc "https://" cho trang web bình thường, nhưng còn nhiều giao thức khác như:
+ "ftp://" (truyền tải tệp qua giao thức File Transfer Protocol) và "mailto:" (địa chỉ email).
+-Domain: Đây là phần sau giao thức và trước các thành phần tiếp theo,
+ thường là tên của trang web hoặc địa chỉ IP của máy chủ chứa tài nguyên.
+-Port:	được phân tách bằng dấu hai chấm (":"), cổng xác định cổng kết nối mà trình duyệt sẽ sử dụng để giao tiếp với máy chủ. 
+Nếu không được chỉ định, giá trị mặc định sẽ là 80 cho HTTP và 443 cho HTTPS.
+-Parameters:Tham số được thêm sau đường dẫn và được bắt đầu bằng dấu chấm hỏi ("?"). 
+Chúng là các cặp tên/tham số mô tả thêm về tài nguyên hoặc yêu cầu cụ thể.
+
+
+
+
+
+*****HPPP response
+-enter- trình duyệt đọc đc response nó ren ra chạy js http => giao diện but thực sự nhận về là văn bản, sus code.
+  	
+--Response headers:
+là phản hồi sau khi sever trả dl mới có tt
+--Requets headers:
+thông tin của yêu cầu gửi đi, sau khi ấn enter => gửi đi requet lên địa chỉ => có thông tin rồi =>
+Response headers chưa có tt =>> gửi tt dạng keys value =>> tùy tốc độ mạng nó gửi lại phản hồi 
+=> -Response headers mới có : dạng keys value
+
+RESPONSE trả lại dữ liệu thuần túy. => trình duyệt đọc => sử lí => rn ra giao diện
+
+
+*******HTTP Requests 
+CRUD
+--HTTP Requests Methods
+GET-Yêu cầu dữ liệu từ 1 tài nguyên (thường sd)
+Post- Gửi dữ liệu( dk,dn, thêm giỏ hàng)
+Put- Tải DL lên
+Head -same Get but k trả về nội dung
+Trace - Chuẩn đoán lỗi
+Options - mô tả tùy chọn liên quan
+Patch- sửa đổi 1 tài nguyên
+Delete- xóa
+----HTTP Status code
+1xx. Thông tin
+2xx. Thành công
+3xx. điều hướng lại (chuyển hướng)
+4xx. lỗi client ( bên phía người dùng)
+5xx. lỗi sever
+
+Web Hosting là gì?
+dịch vụ bạn cần để chứa dữ liệu website và xuất bản website lên mạng. 
+Có một website sẽ giúp tiếp cận hàng triệu người trên toàn cầu,
+
+
+-Responsive UI design cho web có thể sd ở nhiều tb khác nhau  
+
+
+*****Meta tag 
+Thẻ <meta>xác định siêu dữ liệu về tài liệu HTML.
+<meta>các thẻ luôn nằm bên trong phần tử <head>
+ thường được sử dụng để chỉ định bộ ký tự, mô tả trang, từ khóa, tác giả của tài liệu và cài đặt chế độ xem.
+
+6 most important Meta seo
+Title- Description- robots- refresh redirect- charset- viewport 
+
+
+
+****API
+-Application Programming Interface
+-API là một tập hợp các commands, functions, protocols, object,... giúp 2 phần mềm
+có thể tương tác à trao đổi dữ liệu qua lại được với nhau.
+
+-Giúp Application A tương tác App B
+
+
+****Promise xử lí thao tác bất đồng bộ. trước thì sd call back=> call back hell khó nhìn khó hiểu 
+=> promise khắc phục call back hell
+- Sync đồng bộ : 
+- Async bất đồng bộ :SetTimeout, setInterval, fetch, file reading, XMLHtsRequest	
+- Nỗi đau	callback hell Việc 1 xong=> việc 2 => việc 3
+- Lý thuyết, cách Hđ 
+	tại ra Promise sd từ khóa new với Promise, trong contractor của nó truyền vào 1 executor function
+	 nhận đc 2 tham số dạng hàm
+	Promise-> function(resolve, reject){
+	Thành công : resolve()
+	Thất bại: reject()
+Promise phương thức thực hiện
+	.then(functon) khi promise resolve	
+	.catch khi reject
+	.finally
+		
+- có 3 trạng thái :Pending, Fulfilled, Rejected	
+
+Async & Await bản chất là promise. dùng funcion.
+
+
+
+
+
+
+
+
+
+
+
+

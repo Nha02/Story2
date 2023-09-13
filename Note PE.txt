@@ -1,0 +1,38 @@
+Project Management Plan của Capstone Project 
+
+1/ Cách chọn method (phương pháp):
+đề bài bắt chọn phương pháp => phương pháp gì cũng được, nhưng phải giải thích tại sao
+không cần viết ưu và nhược điểm, chỉ cần ghi rõ đặc trưng của các phương pháp như dưới đây
+- Waterfall: (predictive)
+	+ Khách hàng không có nhiều thời gian, cùng lắm ở lúc bắt đầu, cố gắng hiểu 
+hết được requirements của khách hàng.
+	+ Requirements ổn định, rõ ràng, khách hàng nói rõ được mong đợi của họ, định 
+nghĩa được những thứ họ cần. Requirement ko thay đổi nhiều, có tính chất ổn định 
+(predictive).
+	+ Dev team đã có kinh nghiệm + mọi người đã có khả năng hiểu hết toàn bộ dự án, 
+BA/Leader chuyên nghiệp.
+	+ Nâng cấp sang phiên bản khác, dữ liệu cũ đã có sẵn (lưu trên Excel, Word,...)
+- Agile (Scrum): (adaptive)
+	+ Requirements còn mơ hồ, chưa rõ ràng, cần có prototype/pilot version để "dò" ý 
+khách hàng
+	+ Khách hàng muốn quản lí nhưng ko biết cách diễn đạt như thế nào => Customer 
+collaboration
+	+ Dev team chưa thử sức với dự án mới kiểu này(có thể là phương pháp phát triển
+phần mềm, làm webapp,...) 
+2/ Phân biệt functional requirements và user story:
+functional requirements: thường dùng cho Waterfall (traditional method)
+user story: thường dùng cho Agile (modern method)
+vô thi nên viết 1 nửa theo functional 1 nửa theo user story
+	- Viết tự do thì gọi là functional requirements.
+	VD: Bác sĩ: tôi muốn ra đơn thuốc.
+		    tôi muốn xem lịch sử khám của bệnh nhân.
+	- Viết đảo lại theo template: AS A [person], I WANT TO ... SO THAT ...
+	VD: AS A student, I WANT TO check my grade SO THAT ...
+3/ Team size:
+	Waterfall: Waterfall teams are usually quite large. They include more than 15 people. 
+Partially that is because of the strict hierarchical structure of such teams. 
+Their members are not interchangeable, unlike the members of Agile teams.
+	Agile: Agile itself recommends team sizes of 3 to 9 members and many software 
+engineering managers believe 7 members is the magical sweet spot. This considers that a team 
+has different roles – a project manager, business analyst, designers, developers, 
+QA specialists, perhaps DevOps, and others.
